@@ -30,11 +30,24 @@ app.get("/ig/:username" , (req ,res) =>{
    
 })
 
+
 app.get("/ig/:username" , (req ,res) =>{
-    let followers =["sachin", "sudarshan", "atul", "vishal"]
     let {username} = req.params;
-    res.render("instagram.ejs", {username , followers});
+    const instadata = require("./data.json")
+    let data = instadata[username]
+    if(data){
+    res.render("instagram.ejs", {data});
+    }else{
+        res.render("error.ejs")
+    }
+   
 })
+
+// app.get("/ig/:username" , (req ,res) =>{
+//     let followers =["sachin", "sudarshan", "atul", "vishal"]
+//     let {username} = req.params;
+//     res.render("instagram.ejs", {username , followers});
+// })
 
 app.listen(port,() =>{
     console.log(`listening on port ${port}`);

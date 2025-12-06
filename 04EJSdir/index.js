@@ -30,11 +30,11 @@ app.get("/ig/:username" , (req ,res) =>{
    
 })
 
-// app.get("/ig/:username" , (req ,res) =>{
-//     let followers =["sachin", "sudarshan", "atul", "vishal"]
-//     let {username} = req.params;
-//     res.render("instagram.ejs", {username , followers});
-// })
+app.get("/ig/:username" , (req ,res) =>{
+    let followers =["sachin", "sudarshan", "atul", "vishal"]
+    let {username} = req.params;
+    res.render("instagram.ejs", {username , followers});
+})
 
 app.listen(port,() =>{
     console.log(`listening on port ${port}`);

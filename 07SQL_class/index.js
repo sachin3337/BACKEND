@@ -27,14 +27,7 @@ const connection = mysql.createConnection({
 
 //========================= automatic using fetal data ==========
 
-let getRandomUser = () => { // getRandomUser is a function it return the random genereated data when we call to it
-    return [
-        faker.string.uuid(), // or faker.datatype.uuid() based on version
-        faker.internet.username(),
-        faker.internet.email(),
-        faker.internet.password(),
-    ];
-};
+//  
 
 // inserting new data
 // let q = "INSERT INTO user (id,username,email,password) VALUES ?";
